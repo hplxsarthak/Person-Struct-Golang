@@ -9,9 +9,12 @@ type person struct {
 }
 
 func main() {
-	person1 := person{"Sarthak" , "Agrawal"} // In this type we cannot change order
-	person2 := person{firstName: "Alex", lastName: "Anderson"} // In this we can change order
+	// Third way to define struct
+	var person1 person
+
+	person1.firstName = "Alex"
+	person1.lastName = "Anderson"
 
 	fmt.Println(person1)
-	fmt.Println(person2.firstName)
+	fmt.Printf("%+v", person1) // Using this feature of print we can print the struct in the form of object
 }
