@@ -25,7 +25,13 @@ func main() {
 		},
 	}
 
+	person1.updateName("Jimmy") // Passing the value to be change
 	person1.print()
+}
+
+// Passing by value
+func (p person) updateName (newFirstName string) {
+	p.firstName = newFirstName
 }
 
 // Receiver function in struct
