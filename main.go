@@ -2,19 +2,28 @@ package main
 
 import "fmt"
 
+// Defining struct which will be embedded in other struct
+type contactInfo struct {
+	email string
+	pinCode int
+}
+
 // Defining struct type for person
 type person struct {
 	firstName string
 	lastName string
+	contact contactInfo
 }
 
 func main() {
-	// Third way to define struct
-	var person1 person
+	person1 := person{
+		firstName: "Jim",
+		lastName: "Anderson",
+		contact: contactInfo{
+			email: "jim.an@gmail.com",
+			pinCode: 281001,
+		},
+	}
 
-	person1.firstName = "Alex"
-	person1.lastName = "Anderson"
-
-	fmt.Println(person1)
-	fmt.Printf("%+v", person1) // Using this feature of print we can print the struct in the form of object
+	fmt.Printf("%+v", person1)
 }
