@@ -25,13 +25,17 @@ func main() {
 		},
 	}
 
-	person1.updateName("Jimmy") // Passing the value to be change
+	// Dealing with pointers
+	// Turn "address" into "value" with "*address"
+	// Turn "value" into "address" with "&value"
+	person1Pointer := &person1 // Taking the address of the value of the person1 variable using "&"
+	person1Pointer.updateName("Jimmy") // Passing the value to be change using pointers
 	person1.print()
 }
 
-// Passing by value
-func (p person) updateName (newFirstName string) {
-	p.firstName = newFirstName
+// Updating using pointers
+func (pointerToPerson *person) updateName (newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 
 // Receiver function in struct
