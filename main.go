@@ -12,18 +12,23 @@ type contactInfo struct {
 type person struct {
 	firstName string
 	lastName string
-	contact contactInfo
+	contactInfo
 }
 
 func main() {
 	person1 := person{
 		firstName: "Jim",
 		lastName: "Anderson",
-		contact: contactInfo{
+		contactInfo: contactInfo{
 			email: "jim.an@gmail.com",
 			pinCode: 281001,
 		},
 	}
 
-	fmt.Printf("%+v", person1)
+	person1.print()
+}
+
+// Receiver function in struct
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
