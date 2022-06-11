@@ -25,15 +25,12 @@ func main() {
 		},
 	}
 
-	// Dealing with pointers
-	// Turn "address" into "value" with "*address"
-	// Turn "value" into "address" with "&value"
-	person1Pointer := &person1 // Taking the address of the value of the person1 variable using "&"
-	person1Pointer.updateName("Jimmy") // Passing the value to be change using pointers
+	// Dealing with pointers shortcut
+	person1.updateName("Jimmy") // Passing the value to be change but passing only variable not address
 	person1.print()
 }
 
-// Updating using pointers
+// Updating using pointers shortcut
 func (pointerToPerson *person) updateName (newFirstName string) {
 	(*pointerToPerson).firstName = newFirstName
 }
